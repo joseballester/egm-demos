@@ -1,0 +1,12 @@
+cmd "0-roscore" {
+    exec = "roscore";
+    host = "localhost";
+}
+cmd "0-vicon_bridge" {
+    exec = "roslaunch vicon_bridge vicon.launch";
+    host = "localhost";
+}
+cmd "1-robot_node" {
+    exec = "roslaunch robot_node mcubeSystem.launch";
+    host = "localhost";
+}
