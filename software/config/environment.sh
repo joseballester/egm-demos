@@ -44,5 +44,6 @@ alias rebash='source ~/.bashrc'
 alias open='gnome-open'
 alias pman='bot-procman-sheriff -l $PROJECT_BASE/software/config/procman.pmd'
 alias catmake='cd $PROJECT_BASE/catkin_ws; catkin_make; cd -;'
+alias bigterm='terminator --layout=2x3 &'
 
 . /usr/share/autojump/autojump.bash
