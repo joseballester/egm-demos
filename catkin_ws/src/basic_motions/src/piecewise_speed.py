@@ -43,10 +43,10 @@ if __name__ == '__main__':
     command_pose_pub = rospy.Publisher(robot_name + '_EGM/SetCartesian', PoseStamped, queue_size = 100, latch=True)
 
     # Then we activate EGM in velocity mode and a high timeout (e.g. a day)
-    # ret = services.ActivateEGM_client(true, 86400)
-    # if not ret:
-    #     rospy.loginfo('EGM activation was not successful.')
-    #     exit()
+    ret = services.ActivateEGM_client(true, 86400)
+    if not ret:
+        rospy.loginfo('EGM activation was not successful.')
+        exit()
 
     rate = rospy.Rate(hz)
     start_time = rospy.Time.now().to_sec()
@@ -77,7 +77,7 @@ if __name__ == '__main__':
         rate.sleep()
 
     # Finally, stop EGM
-    # ret = services.StopEGM_client()
-    # if not ret:
-    #     rospy.loginfo('EGM deactivation was not successful.')
-    #     exit()
+    ret = services.StopEGM_client()
+    if not ret:
+        rospy.loginfo('EGM deactivation was not successful.')
+        exit()
